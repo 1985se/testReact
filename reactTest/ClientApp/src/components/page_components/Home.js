@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import TopbarComponent from '../global_components/Topbar';
 import axios from 'axios';
+import $ from 'jquery';
 
 class Home extends React.Component {
     constructor(props) {
@@ -11,6 +12,9 @@ class Home extends React.Component {
         }
     }
     componentDidMount() {
+        $(document).ready(function () {
+            $('body').css('background', 'wheat');
+        });
         this.loadData();
     }
     loadData() {
