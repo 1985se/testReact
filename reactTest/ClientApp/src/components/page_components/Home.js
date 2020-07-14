@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import TitleComponent from './Title';
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -12,14 +13,15 @@ class Home extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <canter>
+                <center>
+                    <TitleComponent message="Text Is" message2={this.state.Text}/>
                     <div>
                         {this.state.Text}
                     </div>
                     <button onClick={() => this.onClickChange()} >
                         click
                     </button>
-                </canter>
+                </center>
 
             </React.Fragment>            
             );
