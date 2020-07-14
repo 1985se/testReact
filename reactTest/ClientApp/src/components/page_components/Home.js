@@ -1,5 +1,7 @@
 ﻿import React, { Component } from 'react';
-import TitleComponent from './Title';
+import TopbarComponent from '../global_components/Topbar';
+
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -7,20 +9,16 @@ class Home extends React.Component {
             Text:'Hello Word!!'
         }
     }
-    onClickChange() {
-        this.setState({ Text: 'click' });
-    }
+  
     render() {
         return (
             <React.Fragment>
                 <center>
-                    <TitleComponent message="Text Is" message2={this.state.Text}/>
-                    <div>
-                        {this.state.Text}
+                    <TopbarComponent/>
+                    <div className="main-banner">
+                        <img src={require('../assets/image/banner.jpg')} style={{ width:'-webkit-fill-available' }} />
                     </div>
-                    <button onClick={() => this.onClickChange()} >
-                        click
-                    </button>
+              
                 </center>
 
             </React.Fragment>            

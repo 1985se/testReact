@@ -22,8 +22,6 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\actions\" />
-    <Folder Include="ClientApp\src\components\assets\" />
-    <Folder Include="ClientApp\src\components\global_components\" />
     <Folder Include="ClientApp\src\reducers\" />
   </ItemGroup>
 
