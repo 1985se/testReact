@@ -2,6 +2,10 @@
 import TopbarComponent from '../global_components/Topbar';
 import axios from 'axios';
 import $ from 'jquery';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as productAction from '../../actions/page-action';
+import * as pageAction from '../../actions/page-action';
 
 class Home extends React.Component {
     constructor(props) {
@@ -12,9 +16,7 @@ class Home extends React.Component {
         }
     }
     componentDidMount() {
-        $(document).ready(function () {
-            $('body').css('background', 'wheat');
-        });
+        this.props.PageAction.setPageID(1);
         this.loadData();
     }
     loadData() {
@@ -79,4 +81,10 @@ class Home extends React.Component {
     }
 
 }
-export default Home;
+
+const mapDispatchToProps = dispatch => ({
+    ProductAction: bindActionCreators(productAction, dispatch),
+    PageAction: bindActionCreators(pageAction, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(Home);
